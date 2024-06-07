@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
           if (direction.magnitude >= 0.1f)
           {
               animator.SetBool("Idle",false);
-              animator.SetBool("Walk", true);
+              animator.SetBool("Walking", true);
               animator.SetBool("Running", false);
               animator.SetBool("RifleWalk", false);
               animator.SetBool("IdleAim", false);
@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
           else
           {
               animator.SetBool("Idle",true);
-              animator.SetBool("Walk", false);
+              animator.SetBool("Walking", false);
               animator.SetBool("Running", false);
               // animator.SetBool("RifleWalk", true);
               // animator.SetBool("IdleAim", true);
@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
 
             if (direction.magnitude >= 0.1f)
             {
-                animator.SetBool("Walk", false);
+                animator.SetBool("Walking", false);
                 animator.SetBool("Running", true);
                
                 float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + playerCamera.eulerAngles.y;
@@ -150,7 +150,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                animator.SetBool("Walk", true);
+                animator.SetBool("Walking", true);
                 animator.SetBool("Running", false);
             }
         }
